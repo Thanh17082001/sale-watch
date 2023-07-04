@@ -30,7 +30,7 @@ exports.create = async (req, res) => {
                         } 
                     }
                 }
-            res.cookie('cart', cart);
+            res.cookie('cart', cart, { maxAge: 86400 * 7 * 1000, httpOnly: true });
             return res.redirect('back');
         }
         
